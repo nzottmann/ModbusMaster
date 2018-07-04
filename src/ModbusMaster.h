@@ -91,6 +91,7 @@ public:
 	void begin();
 	void begin(uint16_t);
 	void idle(void (*)());
+	void setSlave(uint8_t);
 	
 	// Modbus exception codes
 	/**
