@@ -36,7 +36,7 @@ Arduino library for communicating with Modbus slaves over RS232/485 (via RTU pro
 #ifndef ModbusMaster_h
 #define ModbusMaster_h
 
-#include "application.h"
+#include "Particle.h"
 
 
 /* _____UTILITY MACROS_______________________________________________________ */

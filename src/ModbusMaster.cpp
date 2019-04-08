@@ -796,7 +796,7 @@ uint8_t ModbusMaster::ModbusMasterTransaction(uint8_t u8MBFunction) {
 	// loop until we run out of time or bytes, or an error occurs
 	u32StartTime = millis();
 	while (u8BytesLeft && !u8MBStatus) {
-		if (MBSerial.available()) {
+		if (MBSerial.available() > 0) {
 			u8ModbusADU[u8ModbusADUSize++] = MBSerial.read();
 			if (u8ModbusADU[0] == 0) { //Incase the received character is zero, discard it
 				u8ModbusADUSize--;
