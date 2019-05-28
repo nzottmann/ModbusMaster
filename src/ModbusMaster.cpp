@@ -219,20 +219,6 @@ void ModbusMaster::setSlave(uint8_t u8MBSlave){
 	_u8MBSlave = u8MBSlave;
 }
 
-// eliminate this function in favor of using existing MB request functions
-uint8_t ModbusMaster::requestFrom(uint16_t address, uint16_t quantity) {
-	uint8_t read;
-	// clamp to buffer length
-	if(quantity > ku8MaxBufferSize) {
-		quantity = ku8MaxBufferSize;
-	}
-	// set rx buffer iterator vars
-	_u8ResponseBufferIndex = 0;
-	_u8ResponseBufferLength = read;
-	
-	return read;
-}
-
 
 void ModbusMaster::sendBit(bool data) {
 	uint8_t txBitIndex = u16TransmitBufferLength % 16;

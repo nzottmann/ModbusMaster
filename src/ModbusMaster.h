@@ -211,7 +211,6 @@ public:
 	void	 clearTransmitBuffer();
 	
 	void beginTransmission(uint16_t);
-	uint8_t requestFrom(uint16_t, uint16_t);
 	void sendBit(bool);
 	void send(uint8_t);
 	void send(uint16_t);
