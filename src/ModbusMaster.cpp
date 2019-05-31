@@ -749,7 +749,7 @@ uint8_t ModbusMaster::ModbusMasterTransaction(uint8_t u8MBFunction) {
 	// if (MBSerial.available()) { //Empty the receive buffer before beginning.
 	// 	MBSerial.read();
 	// }
-	while(MBSerial.read() > -1);
+	while(MBSerial.available() > 0) MBSerial.read();
 			
 	// transmit request
 	if (MBUseEnablePin == 1) {  //Switch RS485 driver to transmitting mode.
